@@ -1,0 +1,72 @@
+﻿<Window x:Class="Apka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Apka"
+        mc:Ignorable="d"
+        Title="Dodaj pracownika" Height="300" Width="800" Background="LightSteelBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+            </ColumnDefinition>
+            <ColumnDefinition Width="*">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GroupBox Margin="25" Header="Dane pracownika">
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto "></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Margin="10"  Grid.Column="0">Imie</Label>
+                <TextBox  Margin="10" Grid.Column="1"></TextBox>
+                <Label Margin="10" Grid.Column="0" Grid.Row="1">Nazwisko</Label>
+                <TextBox Margin="10" Grid.Column="1" Grid.Row="1"></TextBox>
+                <Label Margin="10" Grid.Column="0" Grid.Row="2">Stanowsko</Label>
+                <ComboBox Margin="10" Grid.Row="2" Grid.Column="2">
+                    <ComboBoxItem>
+                        Kierownik
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Starszy programista
+                    </ComboBoxItem>
+                    <ComboBoxItem>Mlodszy programista</ComboBoxItem>
+                    <ComboBoxItem>Tester</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="25" Header="Generowanie hasla" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Margin="10" >Ile znaków?</Label>
+                <TextBox x:Name="ilosc" Margin="10" Grid.Column="1"></TextBox>
+                <CheckBox x:Name="duzemale" Margin="10" IsChecked="True" Grid.Row="1" Grid.ColumnSpan="2">Małe i wielkie litery</CheckBox>
+                <CheckBox x:Name="cyfrowe" Margin="10" Grid.Row="2"  Grid.ColumnSpan="2">cyfry</CheckBox>
+                <CheckBox x:Name="specjalne" Margin="10" Grid.Row="3"  Grid.ColumnSpan="2">znaki specjalne</CheckBox>
+                <Button Foreground="White" Width="80" Grid.Row="4"  Grid.ColumnSpan="2" Background="SteelBlue" Click="Generuj_Click"> Generuj hasło</Button>
+            </Grid>
+        </GroupBox>
+        <Button Margin="10" Width="220" Foreground="White" Grid.Row="1"  Grid.ColumnSpan="2" Background="SteelBlue">Zatwierdź</Button>
+    </Grid>
+</Window>
